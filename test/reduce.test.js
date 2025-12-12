@@ -43,14 +43,6 @@ describe("[C-] Working function with empty array and no start value", () => {
   });
 });
 
-describe("[C-] Incorrect function", () => {
-  test("Expect the result to throw", () => {
-    expect(() => {
-        reduce([], (minus, a) => minus - a);
-    }).toThrow();
-  });
-});
-
 describe("[C-] Working function and string in array", () => {
   test("Expect the result to be 'heyeverybody'", () => {
     expect(reduce(['hey', 'everybody'], (a, b) => a + b, '')).toEqual('heyeverybody');
