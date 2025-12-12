@@ -42,3 +42,22 @@ describe("[C-029] Cast without args", () => {
     expect(castArray()).toEqual([]);
   });
 });
+
+describe("[20861] Cast boolean to array", () => {
+  test("Expect cast boolean to equal [true]", () => {
+    expect(castArray(true)).toEqual([true]);
+  });
+});
+
+describe("[20862] Cast function to array", () => {
+  test("Expect cast function to equal []", () => {
+    const fn = function () {};
+    expect(castArray(fn)).toEqual([fn]);
+  });
+});
+
+describe("[20863] Give the function too many parameters", () => {
+  test("Expect the second argument to be ignored", () => {
+    expect(castArray(1, 2)).toEqual([1]);
+  });
+});
